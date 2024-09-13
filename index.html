@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Ninjas Program Quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-bar"></div>
+
         <!-- Code Ninjas Logo -->
         <img src="logo.svg" alt="Code Ninjas Logo" class="logo">
 
@@ -17,7 +24,7 @@
         <!-- Quiz Form -->
         <form id="quizForm">
             <!-- Step 1: Child's Age -->
-            <div id="step1">
+            <div id="step1" class="fade-in active">
                 <label for="age">What is your child's age?</label>
                 <input type="number" id="age" name="age" min="5" max="14" required>
                 <br><br>
@@ -25,7 +32,7 @@
             </div>
 
             <!-- Step 2: Reading and Typing Skills -->
-            <div id="step2" style="display: none;">
+            <div id="step2" class="fade-in" style="display: none;">
                 <label for="skills">Can your child comfortably read and use a keyboard/mouse?</label>
                 <select id="skills" name="skills" required>
                     <option value="">Select an option</option>
@@ -37,7 +44,7 @@
             </div>
 
             <!-- Step 3: Interest in Coding -->
-            <div id="step3" style="display: none;">
+            <div id="step3" class="fade-in" style="display: none;">
                 <label for="codingInterest">Is your child looking for a challenging, coding-intensive program, or something more casual?</label>
                 <select id="codingInterest" name="codingInterest" required>
                     <option value="">Select an option</option>
@@ -49,7 +56,7 @@
             </div>
 
             <!-- Step 4: Hands-On vs Screen-Based -->
-            <div id="step4" style="display: none;">
+            <div id="step4" class="fade-in" style="display: none;">
                 <label for="learningStyle">Does your child prefer hands-on activities or screen-based learning?</label>
                 <select id="learningStyle" name="learningStyle" required>
                     <option value="">Select an option</option>
@@ -61,7 +68,7 @@
             </div>
 
             <!-- Step 5: Robotics Interest -->
-            <div id="step5" style="display: none;">
+            <div id="step5" class="fade-in" style="display: none;">
                 <label for="roboticsInterest">Is your child interested in robotics or team-based competitions?</label>
                 <select id="roboticsInterest" name="roboticsInterest" required>
                     <option value="">Select an option</option>
@@ -73,7 +80,7 @@
             </div>
 
             <!-- Step 6: Long-Term or Short-Term -->
-            <div id="step6" style="display: none;">
+            <div id="step6" class="fade-in" style="display: none;">
                 <label for="timeCommitment">Are you looking for an ongoing year-round program or something short-term?</label>
                 <select id="timeCommitment" name="timeCommitment" required>
                     <option value="">Select an option</option>
@@ -85,7 +92,7 @@
             </div>
 
             <!-- Step 7: Social vs Learning -->
-            <div id="step7" style="display: none;">
+            <div id="step7" class="fade-in" style="display: none;">
                 <label for="socialPreference">Is your child more interested in learning or social events with friends?</label>
                 <select id="socialPreference" name="socialPreference" required>
                     <option value="">Select an option</option>
