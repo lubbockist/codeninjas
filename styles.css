@@ -1,0 +1,145 @@
+/* Basic reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with Background Image */
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white; /* Make text white for contrast */
+}
+
+/* Container styling with transparent background */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Logo styling */
+.logo {
+    max-width: 150px;  /* Adjust the size to fit */
+    margin-bottom: 20px;
+}
+
+/* Title styling */
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;  /* Adds space between the title and the subheading */
+    color: #338fbf;  /* Code Ninjas blue for title */
+}
+
+/* Subheading (paragraph under title) styling */
+p {
+    font-size: 16px;
+    margin-bottom: 25px;  /* Adds space between subheading and the first question */
+    color: #eaeaea;  /* Light gray to differentiate from the questions */
+}
+
+/* Question label styling to make it stand out */
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;  /* Keep questions white for contrast */
+    margin-bottom: 15px;  /* Space between question and input */
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  /* Adds a subtle shadow to make questions pop */
+}
+
+/* Form input styling */
+input, select {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+
+/* Button styling with Code Ninjas Blue */
+button {
+    background-color: #338fbf; /* Code Ninjas Blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2b7ba1; /* Darker Blue for hover effect */
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    background-color: #555; /* Grey for submit button */
+}
+
+button[type="submit"]:hover {
+    background-color: #333; /* Darker grey for hover */
+}
+
+/* Enroll button styling to stand out */
+button.enroll-btn {
+    background-color: #ffcc00; /* Bright yellow to make it pop */
+    color: black;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin-top: 15px; /* Add space at the top */
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button.enroll-btn:hover {
+    background-color: #ff9900; /* Darker yellow for hover effect */
+}
+
+/* Result styling */
+#result {
+    margin-top: 30px; /* Add more space between the result and the form */
+    font-size: 18px;
+    font-weight: bold;
+    color: white; /* Keep text white on dark background */
+}
+
+/* Tour and Contact Information Styling */
+#result p:last-child {
+    font-size: 18px;
+    margin-top: 20px; /* Add space between result and contact info */
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background to create separation */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Email link styling */
+a {
+    color: #ffcc00; /* Bright yellow for better visibility */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffc107; /* Slightly darker yellow on hover */
+    text-decoration: underline; /* Adds underline on hover for clarity */
+}
