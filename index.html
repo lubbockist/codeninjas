@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Ninjas Program Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Code Ninjas Logo -->
+        <img src="logo.svg" alt="Code Ninjas Logo" class="logo">
+
+        <h1>Welcome to Code Ninjas Program Quiz</h1>
+        <p>Answer a few questions to find the best program for your child!</p>
+        
+        <!-- Quiz Form -->
+        <form id="quizForm">
+            <!-- Step 1: Child's Age -->
+            <div id="step1">
+                <label for="age">What is your child's age?</label>
+                <input type="number" id="age" name="age" min="5" max="14" required>
+                <br><br>
+                <button type="button" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 2: Reading and Typing Skills -->
+            <div id="step2" style="display: none;">
+                <label for="skills">Can your child comfortably read and use a keyboard/mouse?</label>
+                <select id="skills" name="skills" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 3: Interest in Coding -->
+            <div id="step3" style="display: none;">
+                <label for="codingInterest">Is your child looking for a challenging, coding-intensive program, or something more casual?</label>
+                <select id="codingInterest" name="codingInterest" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Challenging</option>
+                    <option value="no">Casual</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 4: Hands-On vs Screen-Based -->
+            <div id="step4" style="display: none;">
+                <label for="learningStyle">Does your child prefer hands-on activities or screen-based learning?</label>
+                <select id="learningStyle" name="learningStyle" required>
+                    <option value="">Select an option</option>
+                    <option value="handsOn">Hands-On</option>
+                    <option value="screenBased">Screen-Based</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="nextStep(5)">Next</button>
+            </div>
+
+            <!-- Step 5: Robotics Interest -->
+            <div id="step5" style="display: none;">
+                <label for="roboticsInterest">Is your child interested in robotics or team-based competitions?</label>
+                <select id="roboticsInterest" name="roboticsInterest" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="nextStep(6)">Next</button>
+            </div>
+
+            <!-- Step 6: Long-Term or Short-Term -->
+            <div id="step6" style="display: none;">
+                <label for="timeCommitment">Are you looking for an ongoing year-round program or something short-term?</label>
+                <select id="timeCommitment" name="timeCommitment" required>
+                    <option value="">Select an option</option>
+                    <option value="longTerm">Ongoing Year-Round</option>
+                    <option value="shortTerm">Short-Term</option>
+                </select>
+                <br><br>
+                <button type="button" onclick="nextStep(7)">Next</button>
+            </div>
+
+            <!-- Step 7: Social vs Learning -->
+            <div id="step7" style="display: none;">
+                <label for="socialPreference">Is your child more interested in learning or social events with friends?</label>
+                <select id="socialPreference" name="socialPreference" required>
+                    <option value="">Select an option</option>
+                    <option value="learning">Learning</option>
+                    <option value="social">Social Events</option>
+                </select>
+                <br><br>
+                <button type="submit">Find the Program</button>
+            </div>
+        </form>
+
+        <!-- Result -->
+        <div id="result"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
