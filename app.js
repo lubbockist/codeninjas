@@ -2,8 +2,16 @@ function nextStep(step) {
     const age = parseInt(document.getElementById('age').value);
     const conditionalMessage = document.createElement('p');
 
-    // Clear any previous conditional messages
-    document.querySelectorAll('.conditional-message').forEach(msg => msg.remove());
+    // Progress bar logic
+    const totalSteps = 7; // Number of steps in the quiz
+    const progress = (step / totalSteps) * 100; // Calculate percentage of progress
+    document.querySelector('.progress-bar').style.width = `${progress}%`; // Update progress bar width
+
+    // Add fade-in class to show each step smoothly
+    document.querySelectorAll('.fade-in').forEach(function(element) {
+        element.classList.remove('active');
+    });
+    document.getElementById('step' + step).classList.add('active');
 
     // Check if the age is out of range and stop the quiz if so
     if (step === 2 && (age < 5 || age > 14)) {
@@ -80,21 +88,21 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
             result = `
                 <p>We recommend <strong>JR CAMPS</strong>. These week-long camps are packed with fun, hands-on STEM learning. Your child can explore coding, robotics, circuits, and more!</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/camps" target="_blank">
-                    <button>Sign Up for JR CAMPS – Secure Your Spot Today!</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for JR CAMPS – Secure Your Spot Today!</button>
                 </a>
             `;
         } else if (socialPreference === 'social') {
             result = `
                 <p>We recommend <strong>Parent's Night Out</strong>! This is a fun, social event for your child to enjoy games and movies with friends.</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/parents-night-out" target="_blank">
-                    <button>Sign Up for Parent's Night Out</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for Parent's Night Out</button>
                 </a>
             `;
         } else {
             result = `
                 <p>We recommend <strong>JR</strong> for your child. This ongoing program will introduce coding and STEM concepts in a fun and supportive group setting. It’s perfect for young ninjas to start learning foundational skills.</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/jr" target="_blank">
-                    <button>Sign Up for JR – Limited Spots Available!</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for JR – Limited Spots Available!</button>
                 </a>
             `;
         }
@@ -106,14 +114,14 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
             result = `
                 <p>We recommend <strong>JR</strong> to help your child build reading and typing skills. This program is designed to give them a strong foundation for future coding projects!</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/jr" target="_blank">
-                    <button>Sign Up for JR – Limited Spots Available!</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for JR – Limited Spots Available!</button>
                 </a>
             `;
         } else if (learningStyle === 'handsOn') {
             result = `
                 <p>We recommend <strong>STEMgineers CLUB</strong>. This hands-on program allows them to explore space, robotics, and circuits through exciting, project-based learning.</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/clubs" target="_blank">
-                    <button>Sign Up for STEMgineers CLUB</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for STEMgineers CLUB</button>
                 </a>
             `;
         } else if (codingInterest === 'yes' && timeCommitment === 'longTerm') {
@@ -125,14 +133,14 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
                     <li>Progress from block coding to advanced coding</li>
                 </ul>
                 <a href="https://www.codeninjas.com/tx-lubbock/create" target="_blank">
-                    <button>Sign Up for CREATE – Enroll Now!</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for CREATE – Enroll Now!</button>
                 </a>
             `;
         } else if (timeCommitment === 'shortTerm') {
             result = `
                 <p>We recommend <strong>CAMPS</strong>. These week-long camps introduce your child to exciting STEM topics like Minecraft, Roblox, and robotics in a short, hands-on program!</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/camps" target="_blank">
-                    <button>Sign Up for CAMPS – Reserve Your Spot!</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for CAMPS – Reserve Your Spot!</button>
                 </a>
             `;
         }
@@ -142,7 +150,7 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
             result += `
                 <p>We recommend <strong>FIRST LEGO League Club</strong>. This program allows your child to compete in exciting team-based robotics challenges!</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/clubs" target="_blank">
-                    <button>Sign Up for FIRST LEGO League Club</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for FIRST LEGO League Club</button>
                 </a>
             `;
         }
@@ -152,21 +160,23 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
             result += `
                 <p>We recommend <strong>Parent's Night Out</strong>! This is a fun, social event for your child to enjoy games and movies with friends.</p>
                 <a href="https://www.codeninjas.com/tx-lubbock/parents-night-out" target="_blank">
-                    <button>Sign Up for Parent's Night Out</button>
+                    <button class="enroll-btn"><i class="fas fa-sign-in-alt"></i> Sign Up for Parent's Night Out</button>
                 </a>
             `;
         }
     }
 
-    // Social proof, tour link, and contact info
-    result += `
-        <p><strong>What parents are saying:</strong></p>
-        <blockquote>
-            "My child loves Code Ninjas! They've learned so much while having fun!"
-        </blockquote>
-        <p>Need more information? <a href="https://www.codeninjas.com/tx-lubbock/schedule-tour" target="_blank">Schedule a tour</a>, call us at <strong>806-370-0022</strong>, or email us at <strong>lubbocktx@codeninjas.com</strong> to sign up or with any questions!</p>
-    `;
+    // Add the tour link and contact info at the bottom
+result += `
+<p><strong>What parents are saying:</strong></p>
+<blockquote>
+    "My child loves Code Ninjas! They've learned so much while having fun!"
+</blockquote>
+<p>Need more information? <a href="https://www.codeninjas.com/tx-lubbock/schedule-tour" target="_blank">Schedule a tour</a>, call us at <strong>806-370-0022</strong>, or email us at <a href="mailto:lubbocktx@codeninjas.com">lubbocktx@codeninjas.com</a> to sign up or with any questions!</p>
+`;
 
-    // Display the result for all age ranges
-    document.getElementById('result').innerHTML = result;
+    // Clear the form and display the result
+    document.getElementById('quizForm').style.display = 'none';  // Hide the form
+    document.querySelector('.progress-bar').style.display = 'none';  // Hide the progress bar
+    document.getElementById('result').innerHTML = result;  // Display the result
 });
